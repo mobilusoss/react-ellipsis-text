@@ -1,4 +1,4 @@
-# react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=develop)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/[PUT PACKAGE NAE HERE].svg)](http://badge.fury.io/js/[PUT PACKAGE NAE HERE])
+# react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=develop)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
 
 React text ellipsify component
 
@@ -48,8 +48,8 @@ EllipsisText.propTypes = {
 
 'use strict';
 
-import React from 'react/addons';
-import EllipsisText  from '../lib/components/EllipsisText';
+import React from 'react';
+import EllipsisText  from 'react-ellipsis-text';
 
 //allow react dev tools work
 window.React = React;
