@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>React-ellipsis-text by georgeOsdDev</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>React-ellipsis-text</h1>
+        <p>React text ellipsify component</p>
+
+        <p class="view"><a href="https://github.com/georgeOsdDev/react-ellipsis-text">View the Project on GitHub <small>georgeOsdDev/react-ellipsis-text</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/georgeOsdDev/react-ellipsis-text/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/georgeOsdDev/react-ellipsis-text/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/georgeOsdDev/react-ellipsis-text">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="react-ellipsis-text--" class="anchor" href="#react-ellipsis-text--" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-ellipsis-text <a href="https://travis-ci.org/georgeOsdDev/react-ellipsis-text"><img src="https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=develop" alt="Build Status"></a> <a href="http://badge.fury.io/js/%5BPUT%20PACKAGE%20NAE%20HERE%5D"><img src="https://badge.fury.io/js/%5BPUT%20PACKAGE%20NAE%20HERE%5D.svg" alt="npm version"></a>
+</h1>
+
+<p>React text ellipsify component</p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://georgeosddev.github.io/react-ellipsis-text/example/">View Demo</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm install --save react-ellipsis-text</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h3>
+<a id="ellipsistext" class="anchor" href="#ellipsistext" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>EllipsisText</code>
+</h3>
+
+<h4>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Props</h4>
+
+<div class="highlight highlight-source-js"><pre>EllipsisText.propTypes <span class="pl-k">=</span> {
+  text<span class="pl-k">:</span> React.PropTypes.string.isRequired,
+  length<span class="pl-k">:</span> React.PropTypes.number.isRequired,
+  tail<span class="pl-k">:</span> React.PropTypes.string,
+  tailClassName<span class="pl-k">:</span> React.PropTypes.string,
+  tooltip<span class="pl-k">:</span> React.PropTypes.bool,
+  copyOnClick<span class="pl-k">:</span> React.PropTypes.bool
+};</pre></div>
+
+<ul>
+<li><p><code>text</code>: Text to display</p></li>
+<li><p><code>length</code>: Max length of text</p></li>
+<li><p><code>tail</code>: Trailing string (Default '...')</p></li>
+<li><p><code>tailClassName</code>: Trailing string element's class name</p></li>
+<li><p><code>tooltip</code>: Tooltip will be display when <code>true</code></p></li>
+<li><p><code>copyOnClick</code>: Original text will be copied into clipboard when tooltip is clicked.</p></li>
+</ul>
+
+<h2>
+<a id="usage-example" class="anchor" href="#usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage example</h2>
+
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">import</span> React <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react/addons<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> EllipsisText  <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>../lib/components/EllipsisText<span class="pl-pds">'</span></span>;
+
+<span class="pl-c">//allow react dev tools work</span>
+<span class="pl-c1">window</span>.React <span class="pl-k">=</span> React;
+
+<span class="pl-k">class</span> <span class="pl-en">App</span> <span class="pl-k">extends</span> <span class="pl-en">React.Component</span> {
+  <span class="pl-en">constructor</span>(<span class="pl-smi">props</span>) {
+    <span class="pl-v">super</span>(props);
+  }
+
+  <span class="pl-en">render</span>() {
+    <span class="pl-k">return</span> (
+      <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span>
+        <span class="pl-k">&lt;</span>EllipsisText text<span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">'</span>1234567890<span class="pl-pds">'</span></span>} length<span class="pl-k">=</span>{<span class="pl-s"><span class="pl-pds">'</span>5<span class="pl-pds">'</span></span>} <span class="pl-k">/&gt;</span>
+      <span class="pl-k">&lt;/</span>div<span class="pl-k">&gt;</span>
+    )
+  }
+};
+
+React.render(<span class="pl-k">&lt;</span>App<span class="pl-k">/&gt;</span>, <span class="pl-c1">document</span>.<span class="pl-c1">getElementById</span>(<span class="pl-s"><span class="pl-pds">'</span>out<span class="pl-pds">'</span></span>));
+</pre></div>
+
+<p>See  <a href="https://github.com/georgeOsdDev/react-ellipsis-text/tree/develop/example">example</a></p>
+
+<div class="highlight highlight-source-shell"><pre>npm install
+npm run start:example</pre></div>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm <span class="pl-c1">test</span></pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/georgeOsdDev">georgeOsdDev</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
