@@ -1,4 +1,4 @@
-# react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=develop)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
+# react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
 
 React text ellipsify component
 
@@ -39,7 +39,7 @@ EllipsisText.propTypes = {
 
   * `tooltip`: Tooltip will be display when `true`
 
-  * `copyOnClick`: Original text will be copied into clipboard when tooltip is clicked.
+  * `clipboard`: Original text will be copied into clipboard when tooltip is clicked.
 
 
 ## Usage example
@@ -70,7 +70,14 @@ class App extends React.Component {
 
 React.render(<App/>, document.getElementById('out'));
 
+// It will be
+// <div>
+//   <span><span>12</sapn><span class='more'>...</span></span>
+//  </div>
+//
+
 ```
+
 
 See  [example](https://github.com/georgeOsdDev/react-ellipsis-text/tree/develop/example)
 
@@ -82,5 +89,5 @@ npm run start:example
 ## Tests
 
 ```bash
-npm test
+npm run test:local
 ```
