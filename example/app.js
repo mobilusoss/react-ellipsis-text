@@ -1,8 +1,9 @@
 'use strict';
 
 import React from 'react';
+import ReactDom from 'react-dom';
 import {Paper} from 'material-ui';
-import EllipsisText  from '../lib/components/EllipsisText';
+import EllipsisText  from '../src/components/EllipsisText';
 
 //allow react dev tools work
 window.React = React;
@@ -25,13 +26,22 @@ class App extends React.Component {
     return (
       <div>
         <h2 style={styles.title}>Simple ellipsify</h2>
+        <p>text='1234567890'</p>
+        <p>length= -1 ~ 11</p>
         <Paper style={styles.content}>
+          <EllipsisText text={'1234567890'} length={-1} />
+          <EllipsisText text={'1234567890'} length={0} />
+          <EllipsisText text={'1234567890'} length={1} />
+          <EllipsisText text={'1234567890'} length={2} />
+          <EllipsisText text={'1234567890'} length={3} />
+          <EllipsisText text={'1234567890'} length={4} />
           <EllipsisText text={'1234567890'} length={5} />
           <EllipsisText text={'1234567890'} length={6} />
           <EllipsisText text={'1234567890'} length={7} />
           <EllipsisText text={'1234567890'} length={8} />
           <EllipsisText text={'1234567890'} length={9} />
           <EllipsisText text={'1234567890'} length={10} />
+          <EllipsisText text={'1234567890'} length={11} />
         </Paper>
         <h2 style={styles.title}>Custom tail</h2>
         <Paper style={styles.content}>
@@ -52,4 +62,4 @@ class App extends React.Component {
   }
 };
 
-React.render(<App/>, document.getElementById('out'));
+ReactDom.render(<App/>, document.getElementById('out'));

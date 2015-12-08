@@ -24,8 +24,11 @@ EllipsisText.propTypes = {
   length: React.PropTypes.number.isRequired,
   tail: React.PropTypes.string,
   tailClassName: React.PropTypes.string,
-  tooltip: React.PropTypes.bool,
-  copyOnClick: React.PropTypes.bool
+  tooltip: React.PropTypes.shape({
+    copyOnClick: React.PropTypes.bool,
+    onAppear: React.PropTypes.func,
+    onDisapepear: React.PropTypes.func
+  })
 };
 ```
 
@@ -37,9 +40,13 @@ EllipsisText.propTypes = {
 
   * `tailClassName`: Trailing string element's class name
 
-  * `tooltip`: Tooltip will be display when `true`
+  * `tooltip`: Tooltip will be display when supplied
 
-  * `clipboard`: Original text will be copied into clipboard when tooltip is clicked.
+  * `tooltip.clipboard`: Original text will be copied into clipboard when tooltip is clicked.
+
+  * `tooltip.onAppear`: Called when tooltip is shown.
+
+  * `tooltip.onDisapepear`: Called when tooltip is hidden.
 
 
 ## Usage example
