@@ -1,5 +1,5 @@
 # react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
-
+[![NPM](https://nodei.co/npm/react-ellipsis-text.png)](https://nodei.co/npm/react-ellipsis-text/)
 React text ellipsify component
 
 ## Demo
