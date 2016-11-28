@@ -1,5 +1,5 @@
 # react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
-
+[![NPM](https://nodei.co/npm/react-ellipsis-text.png)](https://nodei.co/npm/react-ellipsis-text/)
 React text ellipsify component
 
 ## Demo
@@ -24,6 +24,11 @@ EllipsisText.propTypes = {
   length: React.PropTypes.number.isRequired,
   tail: React.PropTypes.string,
   tailClassName: React.PropTypes.string,
+  tooltip: React.PropTypes.shape({
+    copyOnClick: React.PropTypes.bool,
+    onAppear: React.PropTypes.func,
+    onDisapepear: React.PropTypes.func
+  })
 };
 ```
 
@@ -35,6 +40,14 @@ EllipsisText.propTypes = {
 
   * `tailClassName`: Trailing string element's class name
 
+  * `tooltip`: Tooltip will be display when supplied
+
+  * `tooltip.clipboard`: Original text will be copied into clipboard when tooltip is clicked.
+
+  * `tooltip.onAppear`: Called when tooltip is shown.
+
+  * `tooltip.onDisapepear`: Called when tooltip is hidden.
+
 
 ## Usage example
 
@@ -43,8 +56,10 @@ EllipsisText.propTypes = {
 'use strict';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import EllipsisText  from 'react-ellipsis-text';
+
+//allow react dev tools work
+window.React = React;
 
 class App extends React.Component {
   constructor(props) {
@@ -53,15 +68,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <EllipsisText text={'1234567890'} length={'5'} />
+      <div>
+        <EllipsisText text={'1234567890'} length={'5'} />
+      </div>
     )
   }
 };
 
-ReactDOM.render(<App/>, document.getElementById('out'));
+React.render(<App/>, document.getElementById('out'));
 
 // It will be
-//   <span>12<span class='more'>...</span></span>
+// <div>
+//   <span><span>12</sapn><span class='more'>...</span></span>
+//  </div>
 //
 
 ```
