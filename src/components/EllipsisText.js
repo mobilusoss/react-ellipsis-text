@@ -1,46 +1,17 @@
-'use strict';
-
 import React from 'react';
-import {Tooltip} from 'material-ui';
-import Clipboard from 'clipboard';
-
 const styles = {
-  root: {
-    position: 'relative',
-    boxSizing: 'border-box'
-  },
   allText: {
     MozUserSelect: 'text',
     WebkitUserSelect: 'text',
     msUserSelect: 'text',
     userSelect: 'text'
   },
-  tooltip: {
-    boxSizing: 'border-box'
-  }
 }
 
 class EllipsisText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tooltipShown: false
-    };
-    this.hideTimer = null;
-    this.clipboard = null;
-  }
-
-  componentDidMount(){
-    if (this.props.copyOnClick) {
-      this.clipboard = new Clipboard('.EllipsisTextCopy');
-    }
-  }
-
-  componentDidUpdate(){
-    if (this.props.copyOnClick && this.clipboard) {
-      this.clipboard.destroy();
-      this.clipboard = new Clipboard('.EllipsisTextCopy');
-    }
+    this.state = {};
   }
 
   render() {
@@ -49,37 +20,16 @@ class EllipsisText extends React.Component {
       length,
       tail,
       tailClassName,
-      tooltip,
       ...others
     } = this.props;
 
     if (text.length <= this.props.length || this.props.length < 0) {
-      return (<div {...others}><span>{this.props.text}</span></div>);
+      return (<span {...others}>{this.props.text}</span>);
     } else {
 
-      let tooltipElement;
-      let tailStyle = {
+      const tailStyle = {
         cursor: 'auto'
       };
-      if (tooltip) {
-        tailStyle.cursor = 'pointer';
-        tooltipElement = (<Tooltip
-                        ref="tooltip"
-                        label={
-                          <span>
-                            <span style={styles.allText} className='EllipsisTextCopy' data-clipboard-text={text}>
-                              {text}
-                            </span>
-                          </span>
-                        }
-                        show={tooltip && this.state.tooltipShown}
-                        touch={true}
-                        style={styles.tooltip}
-                        onMouseLeave={this._handleMouseLeave.bind(this)}
-                        onMouseEnter={this._handleMouseEnter.bind(this)}
-                        verticalPosition='top'
-                        horizontalPosition='right'/>)
-      }
 
       let displayText;
       if (length - tail.length <= 0){
@@ -89,41 +39,13 @@ class EllipsisText extends React.Component {
       }
 
       return (
-            <div style={styles.root} {...others}>
-              <span>
-                {displayText}
-                <span style={tailStyle}
-                      className={tailClassName}
-                      onMouseLeave={this._handleMouseLeave.bind(this)}
-                      onMouseEnter={this._handleMouseEnter.bind(this)}>
-                  {tail}
-                </span>
-              </span>
-              {tooltipElement}
-            </div>);
-    }
-  }
-  _handleMouseLeave(e) {
-    this.hideTimer = setTimeout(() => {
-      this.setState({tooltipShown: false}, () => {
-        if (this.props.tooltip && typeof this.props.tooltip.onDisapepear === 'function'){
-          this.props.tooltip.onDisapepear();
-        }
-      });
-    }, 1000);
-  }
-
-  _handleMouseEnter(e) {
-    if (this.props.tooltip){
-      e.preventDefault();
-      this.setState({tooltipShown: true}, () => {
-        if (this.hideTimer) {
-          clearTimeout(this.hideTimer);
-        }
-        if (this.props.tooltip && typeof this.props.tooltip.onAppear === 'function'){
-          this.props.tooltip.onAppear();
-        }
-      });
+        <span title={this.props.text} {...others}>
+          {displayText}
+          <span style={tailStyle}
+                className={tailClassName}>
+            {tail}
+          </span>
+        </span>);
     }
   }
 }
@@ -133,17 +55,11 @@ EllipsisText.propTypes = {
   length: React.PropTypes.number.isRequired,
   tail: React.PropTypes.string,
   tailClassName: React.PropTypes.string,
-  tooltip: React.PropTypes.shape({
-    copyOnClick: React.PropTypes.bool,
-    onAppear: React.PropTypes.func,
-    onDisapepear: React.PropTypes.func
-  })
 };
 
 EllipsisText.defaultProps = {
   tail: '...',
   tailClassName: 'more',
-  tooltip: null
 };
 
 export default EllipsisText;

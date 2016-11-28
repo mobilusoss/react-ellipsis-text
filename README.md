@@ -24,11 +24,6 @@ EllipsisText.propTypes = {
   length: React.PropTypes.number.isRequired,
   tail: React.PropTypes.string,
   tailClassName: React.PropTypes.string,
-  tooltip: React.PropTypes.shape({
-    copyOnClick: React.PropTypes.bool,
-    onAppear: React.PropTypes.func,
-    onDisapepear: React.PropTypes.func
-  })
 };
 ```
 
@@ -40,14 +35,6 @@ EllipsisText.propTypes = {
 
   * `tailClassName`: Trailing string element's class name
 
-  * `tooltip`: Tooltip will be display when supplied
-
-  * `tooltip.clipboard`: Original text will be copied into clipboard when tooltip is clicked.
-
-  * `tooltip.onAppear`: Called when tooltip is shown.
-
-  * `tooltip.onDisapepear`: Called when tooltip is hidden.
-
 
 ## Usage example
 
@@ -56,10 +43,8 @@ EllipsisText.propTypes = {
 'use strict';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import EllipsisText  from 'react-ellipsis-text';
-
-//allow react dev tools work
-window.React = React;
 
 class App extends React.Component {
   constructor(props) {
@@ -68,19 +53,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <EllipsisText text={'1234567890'} length={'5'} />
-      </div>
+      <EllipsisText text={'1234567890'} length={'5'} />
     )
   }
 };
 
-React.render(<App/>, document.getElementById('out'));
+ReactDOM.render(<App/>, document.getElementById('out'));
 
 // It will be
-// <div>
-//   <span><span>12</sapn><span class='more'>...</span></span>
-//  </div>
+//   <span>12<span class='more'>...</span></span>
 //
 
 ```
