@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 const styles = {
   allText: {
     MozUserSelect: 'text',
@@ -51,10 +53,10 @@ class EllipsisText extends React.Component {
 }
 
 EllipsisText.propTypes = {
-  text: React.PropTypes.string.isRequired,
-  length: React.PropTypes.number.isRequired,
-  tail: React.PropTypes.string,
-  tailClassName: React.PropTypes.string,
+  text: PropTypes.string.isRequired,
+  length: PropTypes.number.isRequired,
+  tail: PropTypes.string,
+  tailClassName: PropTypes.string,
 };
 
 EllipsisText.defaultProps = {
