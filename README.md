@@ -1,11 +1,11 @@
-# react-ellipsis-text [![Build Status](https://travis-ci.org/georgeOsdDev/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/georgeOsdDev/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
+# react-ellipsis-text [![Build Status](https://travis-ci.org/mobilusoss/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/mobilusoss/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
 
 [![NPM](https://nodei.co/npm/react-ellipsis-text.png)](https://nodei.co/npm/react-ellipsis-text/)
 React text ellipsify component
 
 ## Demo
 
-[View Demo](http://georgeosddev.github.io/react-ellipsis-text/example/)
+[View Demo](http://mobilusoss.github.io/react-ellipsis-text/example/)
 
 ## Installation
 
@@ -83,7 +83,7 @@ React.render(<App />, document.getElementById("out"));
 //
 ```
 
-See [example](https://github.com/georgeOsdDev/react-ellipsis-text/tree/develop/example)
+See [example](https://github.com/mobilusoss/react-ellipsis-text/tree/develop/example)
 
 ```bash
 npm install
