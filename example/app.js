@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import EllipsisText  from '../src/components/EllipsisText';
+import EllipsisText  from '../lib/components/EllipsisText';
 
 //allow react dev tools work
 window.React = React;
