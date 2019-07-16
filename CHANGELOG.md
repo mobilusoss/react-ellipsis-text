@@ -1,5 +1,9 @@
 ## Change Log
 
+### Ver 1.2.1
+  * Update dependencies with `ncu -u`
+  * Add codebeat
+
 ### Ver 1.2.0
   * Update dependencies, add core-js@3
   * Change url from georgeosddev to mobilusoss #10

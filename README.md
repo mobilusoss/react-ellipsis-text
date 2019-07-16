@@ -1,4 +1,4 @@
-# react-ellipsis-text [![Build Status](https://travis-ci.org/mobilusoss/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/mobilusoss/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text)
+# react-ellipsis-text [![Build Status](https://travis-ci.org/mobilusoss/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/mobilusoss/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text) [![codebeat badge](https://codebeat.co/badges/8fcdee06-9bfd-437e-aa17-cbe335a28ac9)](https://codebeat.co/projects/github-com-mobilusoss-react-ellipsis-text-master)
 
 [![NPM](https://nodei.co/npm/react-ellipsis-text.png)](https://nodei.co/npm/react-ellipsis-text/)
 React text ellipsify component
