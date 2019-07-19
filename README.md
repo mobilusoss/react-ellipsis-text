@@ -1,6 +1,7 @@
 # react-ellipsis-text [![Build Status](https://travis-ci.org/mobilusoss/react-ellipsis-text.svg?branch=master)](https://travis-ci.org/mobilusoss/react-ellipsis-text) [![npm version](https://badge.fury.io/js/react-ellipsis-text.svg)](http://badge.fury.io/js/react-ellipsis-text) [![codebeat badge](https://codebeat.co/badges/8fcdee06-9bfd-437e-aa17-cbe335a28ac9)](https://codebeat.co/projects/github-com-mobilusoss-react-ellipsis-text-master)
 
 [![NPM](https://nodei.co/npm/react-ellipsis-text.png)](https://nodei.co/npm/react-ellipsis-text/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmobilusoss%2Freact-ellipsis-text.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmobilusoss%2Freact-ellipsis-text?ref=badge_shield)
 React text ellipsify component
 
 ## Demo
@@ -95,3 +96,7 @@ npm run start:example
 ```bash
 npm run test:local
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmobilusoss%2Freact-ellipsis-text.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmobilusoss%2Freact-ellipsis-text?ref=badge_large)
