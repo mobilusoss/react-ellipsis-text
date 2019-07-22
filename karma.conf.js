@@ -29,21 +29,39 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'test/**/*_spec.js': ['browserify'],
+      'src/**/*.js': ['coverage']
     },
 
     browserify: {
-      transform: [
-        ['babelify'],
+      'transform': [
+        [
+          'babelify',{
+            "presets": [
+              ["@babel/env",{
+                  "useBuiltIns": "entry",
+                  "corejs": 3
+                }
+              ],
+              "@babel/react"
+            ],
+            "plugins": [
+              "istanbul",
+            ],
+          }
+        ]
       ]
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
+
     coverageReporter: {
       reporters: [
-        { type: 'text' }
+        // reporters not supporting the `file` property
+        {type:'lcovonly', subdir: '.'},
+        { type: 'text' },
       ]
     },
 
