@@ -1,5 +1,8 @@
 ## Change Log
 
+### Ver 1.2.2
+  * Replace testing framework with Jest and @testing-library/react
+
 ### Ver 1.2.1
   * Update dependencies with `ncu -u`
   * Add codebeat

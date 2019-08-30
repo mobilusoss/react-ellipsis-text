@@ -25,8 +25,8 @@ class EllipsisText extends React.Component {
       ...others
     } = this.props;
 
-    if (text.length <= this.props.length || this.props.length < 0) {
-      return (<span {...others}>{this.props.text}</span>);
+    if (text.length <= length ||length < 0) {
+      return <span {...others}>{text}</span>;
     } else {
 
       const tailStyle = {
@@ -41,7 +41,7 @@ class EllipsisText extends React.Component {
       }
 
       return (
-        <span title={this.props.text} {...others}>
+        <span title={text} {...others}>
           {displayText}
           <span style={tailStyle}
                 className={tailClassName}>
