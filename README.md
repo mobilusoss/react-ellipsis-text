@@ -37,6 +37,8 @@ EllipsisText.propTypes = {
 
 - `length`: Max length of text
 
+- `position`: Position of the tail (Default 'end') 
+
 - `tail`: Trailing string (Default '...')
 
 - `tailClassName`: Trailing string element's class name
@@ -68,7 +70,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <EllipsisText text={"1234567890"} length={"5"} />
+        <EllipsisText text={"1234567890"} length={"5"} position={'start'}/>
       </div>
     );
   }
