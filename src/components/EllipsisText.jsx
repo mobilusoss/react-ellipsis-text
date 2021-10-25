@@ -25,16 +25,17 @@ const EllipsisText = props => {
         cursor: 'auto'
     };
 
-    const [etext, setEText] = useState(<></>)
+    const [mainText, setMainText] = useState(false)
     const [displayText, setDisplayText] = useState('')
 
     useEffect(() => {
         if (text.length <= length || length < 0) {
-            setEText(<span {...others}>{text}</span>);
+            setDisplayText(text);
+            setMainText(true);
         } else {
 
             if (length - tail.length <= 0) {
-                setDisplayText('');
+                setDisplayText(text);
             } else {
                 if (position === 'center') {
                     const leftText = text.substring(0, ((length / 2) - tail.length));
@@ -49,12 +50,13 @@ const EllipsisText = props => {
 
     return (
         <span title={text} {...others}>
-            {position === 'start' && (<span style={tailStyle}
+            {mainText === true && displayText}
+            {mainText === false && position === 'start' && (<span style={tailStyle}
                 className={tailClassName}>
                 {tail}
             </span>)}
-            {displayText}
-            {position === 'end' && (<span style={tailStyle}
+            {mainText === false && displayText}
+            {mainText === false && position === 'end' && (<span style={tailStyle}
                 className={tailClassName}>
                 {tail}
             </span>)}
