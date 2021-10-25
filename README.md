@@ -23,6 +23,7 @@ npm install --save react-ellipsis-text
 EllipsisText.propTypes = {
   text: PropTypes.string.isRequired,
   length: PropTypes.number.isRequired,
+  position: PropTypes.string.isRequired,
   tail: PropTypes.string,
   tailClassName: PropTypes.string,
   tooltip: PropTypes.shape({
@@ -36,6 +37,8 @@ EllipsisText.propTypes = {
 - `text`: Text to display
 
 - `length`: Max length of text
+
+- `position`: Position of the tail (Default 'end') 
 
 - `tail`: Trailing string (Default '...')
 
@@ -68,7 +71,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <EllipsisText text={"1234567890"} length={"5"} />
+        <EllipsisText text={"1234567890"} length={"5"} position={'end'}/>
       </div>
     );
   }
