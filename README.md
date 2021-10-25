@@ -71,7 +71,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <EllipsisText text={"1234567890"} length={"5"} position={'start'}/>
+        <EllipsisText text={"1234567890"} length={"5"} position={'end'}/>
       </div>
     );
   }
