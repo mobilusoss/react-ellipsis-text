@@ -23,6 +23,7 @@ npm install --save react-ellipsis-text
 EllipsisText.propTypes = {
   text: PropTypes.string.isRequired,
   length: PropTypes.number.isRequired,
+  position: PropTypes.string.isRequired,
   tail: PropTypes.string,
   tailClassName: PropTypes.string,
   tooltip: PropTypes.shape({
